@@ -1,0 +1,12 @@
+Usage: current-user [-g GID] PROG [args]
+
+Runs the specified program under the current Sailfish OS user
+account. Obviously, current-user itself has to be launched with
+root privileges, which are dropped before loading the target
+program. The target program gets access to the session D-Bus,
+can show the UI, access DConf and otherwise behave as if it was
+launched as a part of the user session.
+
+Most notably, it allows programs which require access to user
+session specific things, to be activated by D-Bus with a system
+bus call, e.g. from a system service.
